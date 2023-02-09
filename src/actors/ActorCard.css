@@ -1,0 +1,10 @@
+.card-body h5, 
+.card-body h6{
+    min-height: 48px;
+}
+
+img.card-img-top{
+    height: 100vh;
+    max-height: 300px;
+    object-fit: cover;
+}

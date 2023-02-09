@@ -1,0 +1,16 @@
+.navbar{
+    background-color: goldenrod;
+}
+
+.navbar-brand{
+    color: black !important;
+    font-weight: bold;
+}
+
+.nav-link{
+    color: rgba(53, 47, 47, 0.716) !important;
+}
+
+.nav-link:hover{
+    color: black !important;
+}
