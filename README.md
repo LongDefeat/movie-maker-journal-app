@@ -1,6 +1,8 @@
 # The Movie Maker Journal
 
-This project is fullstack app (backend can be found here _______) modeled somewhat after Letterbox'd, but of course, with my own flare. 
+This project is fullstack app modeled somewhat after Letterbox'd, but of course, with my own flare. 
+
+Backend code: https://github.com/LongDefeat/movie-maker-journal-api/
 
 The purpose of this app is purely to display modern programming practices in React such as:
 
