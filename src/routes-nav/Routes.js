@@ -9,43 +9,42 @@ import MovieDetail from "../movies/MovieDetails";
 import JournalList from "../journal/JournalList";
 import FavoriteList from "../favorites/FavoriteList";
 import SeenMovieList from "../seen/SeenMovieList";
+import MovieGenres from "../movies/MovieGenres";
 
 /** Site-wide routes.
- * 
+ *
  * Parts of site are visitable when logged in.
  * Those routes are wrapped by <PrivateRoute>, which is an authorization component.
- * 
+ *
  * Visiting a non-existant route redirects to homepage.
  */
 
-function RoutesFunc({login, signup}){
+function RoutesFunc({ login, signup }) {
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
 
+        <Route path="/profile" element={<ProfileForm />} />
 
-    return (
-        <div>
-                <Routes>
-                    
-                    <Route path="/" element={<Homepage/>} />
+        <Route path="/login" element={<LoginForm login={login} />} />
 
-                    <Route path="/profile" element={<ProfileForm/>} />
+        <Route path="/signup" element={<SignupForm signup={signup} />} />
 
-                    <Route path="/login" element={<LoginForm login={login}/>} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
 
-                    <Route path="/signup" element={<SignupForm signup={signup}/>} />
+        <Route path="/journal-list" element={<JournalList />} />
 
-                    <Route path="/movies/:id" element={<MovieDetail />} />
+        <Route path="/favorites" element={<FavoriteList />} />
 
-                    <Route path="/journal-list" element={<JournalList />} />
+        <Route path="/seen" element={<SeenMovieList />} />
 
-                    <Route path="/favorites" element={<FavoriteList />} />
+        <Route path="/genres" element={<MovieGenres />} />
 
-                    <Route path="/seen" element={<SeenMovieList />} />
-
-                    
-                    {/* <PrivateRoute path=""/> */}
-                </Routes>
-        </div>
-    )
+        {/* <PrivateRoute path=""/> */}
+      </Routes>
+    </div>
+  );
 }
 
 export default RoutesFunc;
