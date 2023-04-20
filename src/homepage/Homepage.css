@@ -1,7 +1,46 @@
-h1 {
-    color: #3a8ade;
+/* .Title {
+  color: #3a8ade;
 }
 
-h2{
-    color: rgba(207, 206, 206, 0.798);
+h2 {
+  color: rgba(207, 206, 206, 0.798);
+} */
+
+.Homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.Title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #3a8ade;
+  text-shadow: 2px 2px 2px #c7c7c7;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(207, 206, 206, 0.798);
+  margin: 1rem 0;
+  text-shadow: 1px 1px 1px #c7c7c7;
+}
+
+Homepage.css {
+  background-color: #f2f2f2;
+}
+
+.SearchMovieList {
+  margin: 3rem 0;
+}
+
+.PopularMovies {
+  margin: 3rem 0;
+}
+
+.UpcomingMovies {
+  margin: 3rem 0;
 }

@@ -14,7 +14,6 @@ export const TOKEN_STORAGE_ID = "mmj-token";
 
 function App() {
   const [infoLoaded, setInfoLoaded] = useState(false);
-  // const [applicationIds, setApplicationIds] = useState(new Set([]));
   const [currentUser, setCurrentUser] = useState(null);
   const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
 
@@ -28,7 +27,6 @@ function App() {
           let currentUser = await UserDatabaseApi.getCurrentUser(username);
           console.log(currentUser);
           setCurrentUser(currentUser);
-          // setApplicationIds(new Set(currentUser.applicationse));
         } catch (err){
           console.error("App loadUserInfo: problem loading", err);
           setCurrentUser(null);
