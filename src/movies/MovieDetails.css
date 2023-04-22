@@ -1,6 +1,27 @@
-.movie-title{
-    font-style: 'Source Sans Pro', 'Arial';
-    align-items: flex-start;
+.movie-title {
+  font-family: "Source Sans Pro", "Arial", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  align-items: flex-start;
+  color: #999;
+  text-shadow: 1px 1px 2px #fff;
+  margin-bottom: 0.5rem;
 }
 
+.movie-details-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.fade {
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
