@@ -82,6 +82,7 @@ function MovieDetail() {
         className="fade"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        onSubmit={handleSave}
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
@@ -97,9 +98,6 @@ function MovieDetail() {
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleSave} variant="primary" type="submit">
-            Save
-          </Button>
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>

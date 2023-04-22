@@ -1,7 +1,47 @@
 .LoadingSpinner {
-    margin: 200px auto 0 auto;
-    color: lightseagreen;
-    font-size: 24pt;
-    font-weight: bold;
-    text-align: center;
+  margin: 200px auto 0 auto;
+  color: rgb(240, 234, 44);
+  font-size: 24pt;
+  font-weight: bold;
+  text-align: center;
+  animation: bounce 2s linear infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.LoadingSpinner::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100px;
+  height: 2px;
+  background-color: black;
+  animation: scroll 3s linear infinite;
+  transform: translateX(-50%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

@@ -72,6 +72,15 @@ class MovieDatabaseApi {
     return res;
   }
 }
+/** Get movie ratings */
+//   static async getMovieRating(movie_id){
+//     let res = await this.request(``)
+//   }
+// }
+// router.get("/movie/:movie_id/ratings", async (req, res, next) => {
+
+//   let res = await this.request(`moviedb/`)
+// });
 
 /** uri encode component if search movie path doesn't work (turns space into %20) */
 export default MovieDatabaseApi;

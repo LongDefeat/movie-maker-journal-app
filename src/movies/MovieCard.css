@@ -1,17 +1,21 @@
-.MovieCard{
-    min-height: 531.812px;
+.MovieCard {
+  min-height: 531.812px;
 }
 
-.MovieCard-text{
-    height: 200px;
-    overflow: scroll;
+.MovieCard-text {
+  height: 200px;
+  overflow: scroll;
 }
 
-.card-img-top{
-    height: 275px;
-    object-fit: contain;
+.card-img-top {
+  height: 275px;
+  object-fit: contain;
 }
 
-.card-title{
-    min-height: 72px;
+.card-title {
+  min-height: 72px;
+}
+
+.btn {
+  padding: 0;
 }
