@@ -9,6 +9,7 @@ import ActorCard from "../actors/ActorCard";
 import "./MovieDetails.css";
 import LoadingSpinner from "../common/LoadingSpinner";
 import MovieRecommendations from "./MovieRecommendations";
+import WatchProviders from "./WatchProviders";
 
 function MovieDetail() {
   const { id } = useParams();
@@ -21,8 +22,6 @@ function MovieDetail() {
   let basePosterPath = `https://image.tmdb.org/t/p/w500`;
 
   let providerPath = `https://api.themoviedb.org/3/movie`;
-
-  const API_KEY = `9a114ae809d1fc32f0105fcd87afe983`;
 
   useEffect(
     function getMovieDetailsForUser() {
@@ -44,6 +43,7 @@ function MovieDetail() {
     vote_average,
     runtime,
     poster_path,
+    video,
   } = movie.details;
 
   const year = new Date(release_date).toLocaleDateString("en-US", {
@@ -136,6 +136,10 @@ function MovieDetail() {
               <p>Overview: {overview}</p>
               <p>Worldwide Revenue: ${currencyRevenue}</p>
               <p>Average User Rating: {rating}%</p>
+              <p>Trailer: {video}</p>
+              <p>
+                Streaming: {<WatchProviders movieId={id} countryCode="US" />}
+              </p>
               <Button
                 onClick={() => setModalShow(true)}
                 variant="outline-primary"

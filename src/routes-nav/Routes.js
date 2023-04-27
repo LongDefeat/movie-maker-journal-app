@@ -10,6 +10,7 @@ import JournalList from "../journal/JournalList";
 import FavoriteList from "../favorites/FavoriteList";
 import SeenMovieList from "../seen/SeenMovieList";
 import MovieGenres from "../movies/MovieGenres";
+import WatchProviders from "../movies/WatchProviders";
 
 /** Site-wide routes.
  *
@@ -40,6 +41,8 @@ function RoutesFunc({ login, signup }) {
         <Route path="/seen" element={<SeenMovieList />} />
 
         <Route path="/genres" element={<MovieGenres />} />
+
+        <Route path="/watch-providers" element={<WatchProviders />} />
 
         {/* <PrivateRoute path=""/> */}
       </Routes>

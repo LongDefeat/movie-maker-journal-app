@@ -71,6 +71,14 @@ class MovieDatabaseApi {
     let res = await this.request(`/moviedb/genres/`);
     return res;
   }
+
+  static async getWatchProviders(movieId, countryCode) {
+    console.log("getWatchProviders:", movieId, countryCode);
+    let res = await this.request(
+      `/moviedb/movie/${movieId}/watch/providers/${countryCode}`
+    );
+    return res;
+  }
 }
 /** Get movie ratings */
 //   static async getMovieRating(movie_id){
