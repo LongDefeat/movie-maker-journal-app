@@ -22,7 +22,7 @@ function SearchForm({ search }) {
   return (
     <div className="SearchBar">
       <form className="my-5" onSubmit={handleSubmit}>
-        <InputGroup classname="mb-3">
+        <InputGroup className="mb-3">
           <Form.Control
             style={{ borderRadius: "30px 0px 0px 30px" }}
             placeholder="Search Movie"

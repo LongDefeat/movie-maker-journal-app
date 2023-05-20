@@ -137,9 +137,9 @@ function MovieDetail() {
               <p>Worldwide Revenue: ${currencyRevenue}</p>
               <p>Average User Rating: {rating}%</p>
               <p>Trailer: {video}</p>
-              <p>
+              {/* <p>
                 Streaming: {<WatchProviders movieId={id} countryCode="US" />}
-              </p>
+              </p> */}
               <Button
                 onClick={() => setModalShow(true)}
                 variant="outline-primary"

@@ -1,0 +1,12 @@
+/* tr {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+tr.show {
+  opacity: 1;
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+} */
