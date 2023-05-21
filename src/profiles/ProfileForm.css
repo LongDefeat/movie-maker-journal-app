@@ -1,4 +1,37 @@
-.ProfileForm{
-    width: 75px;
-    height: 100px;
+.profile-form {
+  padding-top: 5rem;
+}
+
+.profile-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.profile-subtitle {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.profile-form .btn-primary {
+  margin-top: 1rem;
+}
+
+.profile-form .form-control {
+  margin-bottom: 1rem;
+}
+
+.profile-form .col-auto {
+  margin-top: 1rem;
+}
+
+.profile-form .btn-outline-success {
+  margin-right: 1rem;
+}
+
+.profile-form .btn-outline-danger {
+  margin-left: 1rem;
+}
+
+.profile-form .alert {
+  margin-top: 1rem;
 }

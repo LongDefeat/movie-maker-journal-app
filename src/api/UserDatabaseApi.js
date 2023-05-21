@@ -70,7 +70,9 @@ class UserDatabaseApi {
 
   /** Create Journal entry */
   static async journalMovieReview(user_id, data) {
+    console.log("journalMovieReview hit");
     let res = await this.request(`/journals/${user_id}`, data, "post");
+    console.log(res);
     return res.journalEntry;
   }
 
