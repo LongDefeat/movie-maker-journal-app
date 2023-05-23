@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import UserContext from "../auth/UserContext";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -12,19 +12,11 @@ import { GiMagnifyingGlass } from "react-icons/gi";
 import "./MovieCard.css";
 import UserDatabaseApi from "../api/UserDatabaseApi";
 
-/** Show limited info about a movie
- *
- * Is rendered by MovieCardList to display a "card" for each movie.
- *
- * Receives watched function prop from a parent, which is called on "Seen".
- *
- * MovieCardList --> MovieCard
- */
-
 const unavailableImage = require("./unavailablePoster.jpeg");
 
 function MovieCard({ id, title, poster, overview, voteAverage, releaseDate }) {
   const currentUser = useContext(UserContext);
+  const [clickedIcon, setClickedIcon] = useState(null);
 
   let basePosterPath = `https://image.tmdb.org/t/p/w500`;
   let fullImagePath = `${basePosterPath}${poster}`;
@@ -48,6 +40,13 @@ function MovieCard({ id, title, poster, overview, voteAverage, releaseDate }) {
   });
 
   const rating = Math.floor((voteAverage / 10) * 100);
+
+  const handleClickIcon = (iconName) => {
+    setClickedIcon(iconName);
+    setTimeout(() => {
+      setClickedIcon(null);
+    }, 300);
+  };
 
   const renderSeen = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -87,9 +86,14 @@ function MovieCard({ id, title, poster, overview, voteAverage, releaseDate }) {
                 >
                   <Button
                     variant="primary"
-                    onClick={() => addSeen(currentUser.currentUser.id, id)}
+                    onClick={() => {
+                      handleClickIcon("seen");
+                      addSeen(currentUser.currentUser.id, id);
+                    }}
                     size="sm"
-                    className="font-weight-bold text-uppercase btn"
+                    className={`font-weight-bold text-uppercase btn ${
+                      clickedIcon === "seen" ? "icon-click-animation" : ""
+                    }`}
                   >
                     <HiEye />
                   </Button>
@@ -105,14 +109,16 @@ function MovieCard({ id, title, poster, overview, voteAverage, releaseDate }) {
                     <Button
                       size="sm"
                       variant="info"
-                      className="font-weight-bold text-uppercase btn"
+                      className={`font-weight-bold text-uppercase btn ${
+                        clickedIcon === "details" ? "icon-click-animation" : ""
+                      }`}
+                      onClick={() => handleClickIcon("details")}
                     >
                       <GiMagnifyingGlass />
                     </Button>
                   </OverlayTrigger>
                 </Link>
               </Col>
-
               <Col className="col-auto">
                 <OverlayTrigger
                   placement="bottom"
@@ -121,9 +127,14 @@ function MovieCard({ id, title, poster, overview, voteAverage, releaseDate }) {
                 >
                   <Button
                     size="sm"
-                    onClick={() => addFavorite(currentUser.currentUser.id, id)}
+                    onClick={() => {
+                      handleClickIcon("like");
+                      addFavorite(currentUser.currentUser.id, id);
+                    }}
                     variant="warning"
-                    className="font-weight-bold text-uppercase btn"
+                    className={`font-weight-bold text-uppercase btn ${
+                      clickedIcon === "like" ? "icon-click-animation" : ""
+                    }`}
                   >
                     <GiPopcorn size={20} />
                   </Button>
