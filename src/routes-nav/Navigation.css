@@ -20,7 +20,7 @@
 }
 
 .film-reel-icon {
-  animation: spin 2s infinite linear;
+  animation: spin 3s infinite linear;
 }
 
 @keyframes spin {
