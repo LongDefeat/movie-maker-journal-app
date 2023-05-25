@@ -15,7 +15,7 @@ The purpose of this app is purely to display modern programming practices in Rea
 
 ## Demos
 
-Live demo: ____________
+Live demo: [Check it out!](https://movie-maker-journal-app-5v8c-q8resdujf-longdefeat.vercel.app/)
 
 ## Photos of App in Action
 
