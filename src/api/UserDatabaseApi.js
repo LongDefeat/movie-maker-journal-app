@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://movie-maker-journal-api.herokuapp.com/"
+    : "http://localhost:3001";
 class UserDatabaseApi {
   // token for interactions with the User Database
   static token;
