@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
-
+console.log(BASE_URL);
 /** API Class
  *
  * Static class tying together methods used to get/send
@@ -22,6 +22,8 @@ class MovieDatabaseApi {
     const params = method === "get" ? data : {};
 
     try {
+      // console.log(url);
+      // console.log(await axios({ url, method, data, params, headers }));
       return (await axios({ url, method, data, params, headers })).data;
     } catch (err) {
       console.log(err);
@@ -43,6 +45,8 @@ class MovieDatabaseApi {
   /** Get Popular Movies on Mount */
   static async getPopMovies() {
     let res = await this.request(`/moviedb/popular`);
+    console.log("popular movies");
+    console.log(res);
     return res;
   }
 
